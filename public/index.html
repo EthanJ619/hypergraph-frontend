@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <script type="text/javascript">
+    window._AMapSecurityConfig = {
+      securityJsCode: '80e09c6d325e98f2910c75c71d7ad8ef',
+    }</script>
+  <script src="https://a.amap.com/Loca/static/mock/adcodes.js"></script>
+  <script type="text/javascript"
+    src="https://webapi.amap.com/maps?v=2.0&key=a078bb17660407ab2ca5bcdbc459b4ec&plugin=AMap.Scale,AMap.ToolBar,AMap.ControlBar"></script>
+  <script src="https://a.amap.com/jsapi_demos/static/demo-center/data/china-pp.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
