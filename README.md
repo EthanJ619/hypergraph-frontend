@@ -1,6 +1,6 @@
 # su
 
-## Project setup
+## Project setup(强烈建议使用cnpm/pnpm等国内镜像install本地模块)
 ```
 npm install
 ```
