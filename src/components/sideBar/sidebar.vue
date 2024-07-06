@@ -286,6 +286,7 @@
               </div>
               <div class="sidebar" @click="handleNavi(12)">
                 <el-menu-item
+                  index="/kink"
                   :class="
                     this.sideBarActive === 12 ? 'active-bar' : 'inactive-bar'
                   "

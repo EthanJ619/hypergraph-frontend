@@ -74,10 +74,10 @@
           height="40vh"
           border
         >
-          <el-table-column prop="id" label="label" sortable></el-table-column>
+          <el-table-column prop="id" label="索引" sortable></el-table-column>
           <el-table-column
             prop="degree"
-            label="degree"
+            label="度数"
             sortable
           ></el-table-column>
           <el-table-column

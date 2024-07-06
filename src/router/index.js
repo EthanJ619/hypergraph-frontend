@@ -28,7 +28,8 @@ import AdminDataManage from '@/components/tab/AdminDataManage.vue'
 import logIn from '@/views/user/Login.vue'
 import register from '@/views/user/register.vue'
 import forget from '@/views/user/forget.vue'
-import intro from "@/components/tab/intro.vue";
+import intro from "@/views/intro.vue";
+import kink from "@/views/entrys.vue";
 import updatePassword from '@/views/user/updatePassword.vue'
 import userCenter from '@/views/user/userCenter.vue'
 import inform from '@/views/inform.vue'
@@ -60,6 +61,11 @@ const routes = [
       path: '/intro',
       name: 'intro',
       component: intro
+    },
+    {
+      path: '/kink',
+      name: 'kink',
+      component: kink
     },
     /* {
       path: '/depre_index',

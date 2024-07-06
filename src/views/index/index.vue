@@ -25,7 +25,7 @@
           <div class="stat-items">
             <el-card class="stat-item">
               <div class="text_place">
-                <i class="el-icon-s-grid"></i> 专病集个数：5
+                <i class="el-icon-s-grid"></i> 数据集数量：9
                 <!-- <i class="el-icon-s-grid"></i> 专病集个数：{{
                   statistic.specialityCount
                 }} -->

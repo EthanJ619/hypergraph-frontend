@@ -23,7 +23,7 @@
             >
               <el-form-item prop="k_clusters">
                 <template slot="label">
-                  <span class="paramTitle">k_clusters</span>
+                  <span class="paramTitle">k_clusters（聚簇数）</span>
                   <el-popover placement="right" trigger="hover">
                     <div>
                       K-Means聚类算法中簇的数量，必须为正整数值，且小于等于参与运算的特征数量
@@ -40,7 +40,7 @@
 
               <el-form-item prop="random_state">
                 <template slot="label">
-                  <span class="paramTitle">random_state</span>
+                  <span class="paramTitle">random_state（随机种子）</span>
                   <el-popover placement="right" trigger="hover">
                     <div>
                       随机种子，用于确保聚类结果的可重复性。<br />如果为空，则每次运行可能会产生不同的聚类结果。
@@ -87,7 +87,7 @@
             <el-form :model="knn_params" label-position="top" ref="knn_ref">
               <el-form-item prop="k_neighbors">
                 <template slot="label">
-                  <span class="paramTitle">k_neighbors</span>
+                  <span class="paramTitle">k_neighbors（近邻数）</span>
                   <el-popover placement="right" trigger="hover">
                     <div>
                       每个节点的邻居数量，必须为正整数值，且小于参与运算的特征数量
@@ -104,11 +104,11 @@
 
               <el-form-item prop="is_prob">
                 <template slot="label">
-                  <span class="paramTitle">is_prob</span>
+                  <span class="paramTitle">is_prob（基于距离）</span>
                   <el-popover placement="right" trigger="hover">
                     <div>
                       是否使用基于距离的权重。<br />如果为
-                      true，则使用距离的指数函数作为权重；<br />如果为
+                      true，则使用基于距离的高斯核函数计算结果作为权重；<br />如果为
                       false，则所有边的权重为1。
                     </div>
                     <el-icon
@@ -152,7 +152,7 @@
             <el-form :model="l1_params" label-position="top" ref="l1_ref">
               <el-form-item prop="gamma">
                 <template slot="label">
-                  <span class="paramTitle">gamma</span>
+                  <span class="paramTitle">gamma（稀疏度）</span>
                   <el-popover placement="right" trigger="hover">
                     <div>
                       正则化参数，用于控制稀疏性。<br />较大的 γ
@@ -170,7 +170,7 @@
 
               <el-form-item prop="k_neighbors">
                 <template slot="label">
-                  <span class="paramTitle">k_neighbors</span>
+                  <span class="paramTitle">k_neighbors（近邻数）</span>
                   <el-popover placement="right" trigger="hover">
                     <div>
                       每个节点的最近邻居数量，决定了每个节点的线性组合的邻居个数。<br />必须为正整数值，且小于参与运算的特征数量
