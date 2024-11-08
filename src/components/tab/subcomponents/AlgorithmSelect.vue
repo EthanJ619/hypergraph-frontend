@@ -258,35 +258,39 @@ export default {
     startTask(url, algor) {
       this.loading = true;
       var payload;
+      payload = {
+        dataset: this.m_tableName,
+        // tableid: this.m_tableId,
+        taskName: this.m_taskName,
+        uid: sessionStorage.getItem("userid"),
+        leader: this.m_principal,
+        participant: this.m_participants,
+        disease: this.m_disease,
+        remark: this.m_remark,
+      };
       if (algor == "kmeans") {
         this.m_kmeans_update(this.kmeans_params);
-        payload = {
-          tablename: this.m_tableName,
-          tableid: this.m_tableId,
-          taskname: this.m_taskName,
-          algorparams: this.m_kmeans,
-        };
+        payload.model = "kmeans";
+        payload.para = Object.keys(this.m_kmeans);
+        payload.paraValue = Object.values(this.m_kmeans);
+        payload.algorParams = this.m_kmeans;
       } else if (algor == "knn") {
         this.m_knn_update(this.knn_params);
-        payload = {
-          tablename: this.m_tableName,
-          tableid: this.m_tableId,
-          taskname: this.m_taskName,
-          algorparams: this.m_knn,
-        };
+        payload.model = "knn";
+        payload.para = Object.keys(this.m_knn);
+        payload.paraValue = Object.values(this.m_knn);
+        payload.algorParams = this.m_knn;
       } else if (algor == "l1_reg") {
         this.m_l1_reg_update(this.l1_params);
-        payload = {
-          tablename: this.m_tableName,
-          tableid: this.m_tableId,
-          taskname: this.m_taskName,
-          algorparams: this.m_l1_reg,
-        };
+        payload.model = "L1 regulization";
+        payload.para = Object.keys(this.m_l1_reg);
+        payload.paraValue = Object.values(this.m_l1_reg);
+        payload.algorParams = this.m_l1_reg;
       }
 
       postRequest(url + algor, payload)
         .then((res) => {
-          console.log(res.data);
+          console.log(res);
           this.m_changeTaskInfo({ algorithm: this.model, factorHg: res.data });
           this.loading = false;
           this.m_changeStep(this.m_stepActive + 1);
@@ -306,7 +310,6 @@ export default {
 
 <style scoped>
 #modelList {
-  height: 60vh;
   width: 100%;
   margin-bottom: 5vh;
 }
@@ -320,9 +323,9 @@ export default {
 
 .introBox {
   background-color: #e8f3ff;
-  height: 10vh;
-  width: 100%;
-  overflow: auto;
+  border-radius: 10px;
+  padding: 10px;
+  width: inherit;
 }
 
 .introBox p {
@@ -364,9 +367,8 @@ export default {
 }
 
 .buttonBox {
-  width: 35vh;
   margin-top: 70px;
-  margin-right: auto;
-  margin-left: auto;
+  display: flex;
+  justify-content: center;
 }
 </style>

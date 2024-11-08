@@ -1,5 +1,5 @@
 {
-  "name": "su",
+  "name": "software6",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,15 +18,15 @@
     "element-ui": "^2.15.13",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
-    "html2pdf.js": "^0.10.1",
     "jquery": "^3.7.1",
-    "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
+    "pdfjs-dist": "^2.5.207",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "venn.js": "git+https://github.com/benfred/venn.js.git",
     "vue": "^2.6.14",
+    "vue-pdf-signature": "^4.2.7",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2",
     "xlsx": "^0.18.5"
@@ -34,14 +34,14 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@volar-plugins/vetur": "^2.0.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint-plugin-vue": "^8.0.3",
-    "vue-template-compiler": "^2.6.14",
-    "@volar-plugins/vetur": "^2.0.0"
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,

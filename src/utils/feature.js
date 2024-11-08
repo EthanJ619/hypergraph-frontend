@@ -1,6 +1,6 @@
 import request from "@/utils/request";
 
-export function getFeatures(url,index) {
+export function getFetures(url,index) {
   return request({
     method: "get",
     url,

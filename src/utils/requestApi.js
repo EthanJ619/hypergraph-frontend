@@ -22,6 +22,6 @@ export function saveParentDisease(url, diseaseName) {
     url,
     params: {
       diseaseName: diseaseName
-    }
+    } 
   });
 }

@@ -76,7 +76,7 @@
           "
         >
           <div class="cardInfo">
-            <div><span class="ttl">任务名称：</span>{{ item.taskName }}</div>
+            <div><span class="ttl">任务名称：</span>{{ item.taskname }}</div>
             <div><span class="ttl">负责人：</span>{{ item.leader }}</div>
             <div><span class="ttl">所属疾病：</span>{{ item.disease }}</div>
             <div><span class="ttl">使用模型：</span>{{ item.model }}</div>
@@ -152,7 +152,7 @@
             </div>
           </div>
         </div>
-        <div class="taskInfoBox target_features">
+        <!-- <div class="taskInfoBox target_features">
           <span class="lineStyle">▍</span
           ><span class="featureTitle">目标因素：</span>
           <span>{{ result.targetcolumn.toString() }}</span>
@@ -161,8 +161,13 @@
           <span class="lineStyle">▍</span
           ><span class="featureTitle">所用特征：</span>
           <span>{{ result.feature.toString() }}</span>
+        </div> -->
+        <div class="taskInfoBox remark">
+          <span class="lineStyle">▍</span
+          ><span class="featureTitle">备注：</span>
+          <span>{{ result.remark }}</span>
         </div>
-        <div class="taskInfoBox result">
+        <!-- <div class="taskInfoBox result">
           <span class="lineStyle">▍</span
           ><span class="featureTitle">挖掘结果：</span>
           <div v-for="(item, index) in result.res" :key="index">
@@ -175,7 +180,7 @@
           <span class="lineStyle">▍</span
           ><span class="featureTitle">专家知识匹配度：</span>
           <span>{{ (result.ratio * 100).toFixed(2) }}%</span>
-        </div>
+        </div> -->
 
         <span slot="footer" class="dialog-footer">
           <el-button @click="resultDialogShow = false">关 闭</el-button>
@@ -241,10 +246,12 @@ export default {
     handleCheck(row) {
       getRequest(`Task/result/${row.id}`).then((res) => {
         if (res.code == 200) {
+          debugger;
+          console.log(res);
           this.result = res.data;
-          if (this.result.parameters != null) {
-            this.result.parameters = this.result.parameters.split(",");
-          }
+          /* if (this.result.para != null) {
+            this.result.para = this.result.para.split(",");
+          } */
 
           this.resultDialogShow = true;
         } else {

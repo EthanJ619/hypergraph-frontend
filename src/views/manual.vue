@@ -15,14 +15,14 @@
 import pdf from "vue-pdf-signature";
 
 export default {
-  name: "intro",
+  name: "Maunal",
 
   components: { pdf },
   data() {
     return {
       pageCount: 0, //当前页
-      src: "/static/introdoc.pdf", // pdf文件地址
-      // src: "/software6/static/introdoc.pdf", // 山东部署
+      src: "/static/manual.pdf", // pdf文件地址
+      // src: "/software6/static/manual.pdf", // 山东部署
       numPages: 0, //总页数
     };
   },

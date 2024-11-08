@@ -52,7 +52,7 @@
           >
         </el-radio-group>
       </el-form-item> -->
-      <el-form-item prop="tips">
+      <el-form-item prop="remark">
         <template slot="label">
           <span class="lineStyle">▍</span>
           <span>备注</span>
@@ -61,7 +61,7 @@
           type="textarea"
           :autosize="{ minRows: 10, maxRows: 20 }"
           placeholder="请输入内容"
-          v-model="taskInfoForm.label"
+          v-model="taskInfoForm.remark"
         ></el-input>
       </el-form-item>
       <el-form-item>
@@ -95,8 +95,7 @@ export default {
         taskName: "",
         principal: "swish",
         participants: "",
-        disease: "",
-        tips: "",
+        remark: "",
       },
     };
   },

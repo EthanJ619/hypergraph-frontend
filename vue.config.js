@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
+  // publicPath: '/software6/',   //山东部署新增
   transpileDependencies: true,
   lintOnSave: false,
   devServer: {
@@ -8,6 +9,7 @@ module.exports = defineConfig({
 
       '/api': {
         target: 'http://127.0.0.1:8186', // 我们要代理的地址
+        // target: 'http://localhost:8086',  //绵阳&山东
         // target: "http://10.16.85.149:8185",//连的胡双后台，数据表中有公共数据集节点
         changeOrigin: true,  // 是否跨域 需要设置此值为true 才可以让本地服务代理我们发出请求
         pathRewrite: {
@@ -21,6 +23,6 @@ module.exports = defineConfig({
   },
   // 调试工具
   configureWebpack: {
-    devtool: 'source-map'
+    devtool: 'source-map',
   }
 })

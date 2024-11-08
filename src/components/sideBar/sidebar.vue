@@ -26,9 +26,9 @@
             疾病危险因素跨时空超图构建工具软件</el-menu-item
           >
           <!--            <template slot="title">当前服务器：</template>-->
-          <el-menu-item index="2" style="float: right"
+          <!-- <el-menu-item index="2" style="float: right" @click.native="logout"
             ><i class="el-icon-close el-icon"></i>退出登录</el-menu-item
-          >
+          > -->
           <el-menu-item index="/userCenter" style="float: right"
             ><i class="el-icon-user el-icon"></i>个人中心</el-menu-item
           >
@@ -253,10 +253,20 @@
                   <el-menu-item
                     index="/logManage"
                     :class="
-                      sideBarActive === 10 ? 'active-bar' : 'inactive-bar'
+                      this.sideBarActive === 10 ? 'active-bar' : 'inactive-bar'
                     "
                   >
                     <span slot="title" class="sub-sidetext">日志管理</span>
+                  </el-menu-item>
+                </div>
+                <div class="sidebar submenu-bar" @click="handleNavi(11)">
+                  <el-menu-item
+                    index="/inform"
+                    :class="
+                      sideBarActive === 11 ? 'active-bar' : 'inactive-bar'
+                    "
+                  >
+                    <span slot="title" class="sub-sidetext">公告管理</span>
                   </el-menu-item>
                 </div>
               </el-submenu>
@@ -272,11 +282,11 @@
                 justify-content: flex-end;
               "
             >
-              <div class="sidebar" @click="handleNavi(11)">
+              <div class="sidebar" @click="handleNavi(12)">
                 <el-menu-item
                   index="/intro"
                   :class="
-                    this.sideBarActive === 11 ? 'active-bar' : 'inactive-bar'
+                    this.sideBarActive === 12 ? 'active-bar' : 'inactive-bar'
                   "
                   ><i :class="['el-icon-question', 'icon']"></i
                   ><span slot="title" class="sidetext"
@@ -284,11 +294,11 @@
                   ></el-menu-item
                 >
               </div>
-              <div class="sidebar" @click="handleNavi(12)">
+              <div class="sidebar" @click="handleNavi(13)">
                 <el-menu-item
-                  index="/kink"
+                  index="/manual"
                   :class="
-                    this.sideBarActive === 12 ? 'active-bar' : 'inactive-bar'
+                    this.sideBarActive === 13 ? 'active-bar' : 'inactive-bar'
                   "
                   ><i :class="['el-icon-thumb', 'icon']"></i
                   ><span slot="title" class="sidetext"
@@ -367,6 +377,13 @@ export default {
     },
     resetStep() {
       this.m_changeStep(0);
+    },
+    logout() {
+      /* 山东部署 */
+      /* sessionStorage.removeItem('username');
+      sessionStorage.removeItem('userid');
+      sessionStorage.removeItem('userrole');
+      window.close(); */
     },
     showOverlay() {
       this.showingOverlay = true;

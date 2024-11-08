@@ -7,7 +7,7 @@ export default {
       principal: "",
       participants: "",
       disease: "",
-      m_tips: "",
+      remark: "",
       tableId: "",
       tableName: "",
       use_features: [],

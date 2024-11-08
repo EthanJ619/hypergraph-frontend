@@ -1,23 +1,23 @@
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-<!--      <keep-alive include="cloudPhoneManager">-->
+      <!--      <keep-alive include="cloudPhoneManager">-->
       <router-view :key="key" />
-<!--      </keep-alive>-->
+      <!--      </keep-alive>-->
     </transition>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'AppMain',
+  name: "AppMain",
   computed: {
     key() {
-      console.log(this.$route.path)
-      return this.$route.path
-    }
-  }
-}
+      console.log(this.$route.path);
+      return this.$route.path;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -29,7 +29,7 @@ export default {
 /*  overflow: hidden;*/
 /*}*/
 /*.app-main { !*84 = navbar + tags-view = 50 +34 *! height: calc(100vh - 84px); width: 100%; position: relative; overflow-y: scroll; }*/
-.fixed-header+.app-main {
+.fixed-header + .app-main {
   padding-top: 60px;
 }
 </style>

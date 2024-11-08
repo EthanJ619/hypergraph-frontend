@@ -11,6 +11,8 @@ const server = axios.create({
 })
 
 server.defaults.baseURL = '/api'
+// server.defaults.baseURL = '/software6/api'  //山东部署
+
 
 // 请求拦截器
 server.interceptors.request.use(

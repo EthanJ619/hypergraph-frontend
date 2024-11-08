@@ -3,6 +3,7 @@ import { Message } from 'element-ui'
 import router from '../router'
 
 axios.defaults.baseURL = '/api'
+// axios.defaults.baseURL = '/software6/api'  //山东部署
 
 
 // 请求拦截器

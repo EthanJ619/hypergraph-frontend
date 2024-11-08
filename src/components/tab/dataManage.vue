@@ -1892,7 +1892,7 @@ export default {
       payload.append("newName", this.dialogForm.tableName);
       payload.append("disease", this.dialogForm.dataDisease);
       payload.append("user", sessionStorage.getItem("username"));
-      payload.append("uid", sessionStorage.getItem("userid"));
+      payload.append("uid", this.loginUserID);
       payload.append("parentId", this.nodeData.id);
       payload.append("parentType", this.nodeData.label);
       payload.append("status", this.nodeData.status);
@@ -1977,7 +1977,7 @@ export default {
         payload.append("newName", this.dialogForm.tableName);
         payload.append("disease", "多疾病");
         payload.append("user", sessionStorage.getItem("username"));
-        payload.append("uid", sessionStorage.getItem("userid"));
+        payload.append("uid", this.loginUserID);
         payload.append("parentId", this.selectedOptions[0]);
         payload.append("parentType", "多疾病");
         if (this.is_share == true) {
@@ -2057,7 +2057,7 @@ export default {
 
         payload.append("ids", this.selectedOptions);
 
-        payload.append("uid", sessionStorage.getItem("userid"));
+        payload.append("uid", this.loginUserID);
         payload.append("parentType", this.nodeData.label);
         payload.append("status", this.nodeData.status);
         if (this.is_share == true) {
@@ -2068,7 +2068,7 @@ export default {
         payload.append("size", fileSizeInMB);
         payload.append("is_upload", "1");
         payload.append("is_filter", "0");
-        // payload.append("current_uid", sessionStorage.getItem("userid"));
+        // payload.append("current_uid", this.loginUserID);
         payload.append("uid_list", this.uid_list);
         this.options = {
           method: "post",
@@ -2527,7 +2527,7 @@ export default {
     openFileterAddDataForm() {
       this.addDataForm = {
         dataName: "",
-        uid: sessionStorage.getItem("userid"),
+        uid: this.loginUserID,
         username: sessionStorage.getItem("username"),
         createUser: sessionStorage.getItem("username"),
         isUpload: "0",
@@ -2555,7 +2555,7 @@ export default {
     openAddDataForm() {
       this.addDataForm = {
         dataName: "",
-        uid: sessionStorage.getItem("userid"),
+        uid: this.loginUserID,
         username: sessionStorage.getItem("username"),
         createUser: sessionStorage.getItem("username"),
         isUpload: "0",

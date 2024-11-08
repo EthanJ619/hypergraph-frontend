@@ -10,6 +10,9 @@ export default {
     m_taskName() {
       return this.$store.state[this.moduleName].taskName;
     },
+    m_remark(){
+      return this.$store.state[this.moduleName].remark;
+    },
     m_principal() {
       return this.$store.state[this.moduleName].principal;
     },

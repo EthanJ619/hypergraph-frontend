@@ -264,7 +264,7 @@ export default {
           title: "超图构建",
           img: require("../../assets/graph_white.png"),
           type: "success",
-          router: "/HGconstruct",
+          router: "/factorHg",
         },
         {
           title: "任务记录",
@@ -273,10 +273,10 @@ export default {
           router: "/taskManage",
         },
         {
-          title: "系统日志",
+          title: "软件介绍",
           img: require("../../assets/sysconfig.png"),
           type: "info",
-          router: "/logManage",
+          router: "/intro",
         },
       ],
       chartLegend: [],
@@ -789,6 +789,7 @@ export default {
 ::v-deep .info-top {
   position: relative;
   background: none repeat scroll 0 0 #f9f9f9af;
+  backdrop-filter: blur(3px); /* 毛玻璃效果 */
   border-bottom: 1px solid #ccc;
   border-radius: 5px 5px 0 0;
 }

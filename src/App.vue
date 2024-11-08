@@ -14,6 +14,22 @@ export default {
       isRouterAlive: true,
     };
   },
+
+  /* 山东部署 */
+  /* mounted() {
+    window.addEventListener("beforeunload", this.handleBeforeUnload);
+  },
+  beforeDestroy() {
+    window.removeEventListener("beforeunload", this.handleBeforeUnload);
+  },
+  methods: {
+    handleBeforeUnload() {
+      // 在这里清空sessionStorage
+      sessionStorage.removeItem("username");
+      sessionStorage.removeItem("userid");
+      sessionStorage.removeItem("userrole");
+    },
+  }, */
 };
 </script>
 <style lang="scss">

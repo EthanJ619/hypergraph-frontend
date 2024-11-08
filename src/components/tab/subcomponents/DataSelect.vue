@@ -463,6 +463,9 @@ export default {
         this.tableData = [];
         this.getTableData(data.id, data.label);
         this.nodeData = data;
+        getRequest("/api/category/" + data.parentId).then(
+          (res) => (this.nodeData.parent = res.data)
+        );
       }
     },
 
@@ -477,9 +480,14 @@ export default {
       this.m_changeTaskInfo({
         tableId: this.nodeData.id,
         tableName: this.nodeData.label,
+        disease: this.nodeData.parent,
       });
-      if (this.moduleName === "spatialHg") this.startTask("/graph/spatialHg");
-      else if (this.moduleName === "factorHg")
+      if (this.moduleName === "spatialHg") {
+        this.startTask("/graph/spatialHg");
+        this.m_changeTaskInfo({
+          algorithm: "pearson",
+        });
+      } else if (this.moduleName === "factorHg")
         this.m_changeStep(this.m_stepActive + 1);
     },
 
@@ -490,15 +498,21 @@ export default {
     startTask(url) {
       this.loading2 = true;
       let payload = {
-        tablename: this.m_tableName,
-        tableid: this.m_tableId,
-        taskname: this.m_taskName,
+        dataset: this.m_tableName,
+        // tableid: this.m_tableId,
+        taskName: this.m_taskName,
+        uid: sessionStorage.getItem("userid"),
+        leader: this.m_principal,
+        participant: this.m_participants,
+        disease: this.nodeData.parent,
+        model: "pearson",
+        remark: this.m_remark,
       };
       postRequest(url, payload)
         .then((res) => {
-          this.m_changeTaskInfo({ algorithm: "pearson", result: res });
+          console.log(res);
+          this.m_changeTaskInfo({ disease: this.nodeData.parent, result: res });
           this.loading2 = false;
-          console.log(this.m_taskName);
           this.m_changeStep(this.m_stepActive + 1);
         })
         .catch((err) => {

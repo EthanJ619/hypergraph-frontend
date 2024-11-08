@@ -88,7 +88,11 @@ export default {
   computed: {
     ...mapState("factorHg", ["stepActive"]),
   },
-  watch: {},
+  watch: {
+    stepActive(newV, old) {
+      console.log("stepActive改变了：" + newV);
+    },
+  },
   created() {},
   mounted() {},
 };
